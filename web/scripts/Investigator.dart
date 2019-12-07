@@ -4,6 +4,15 @@
     TODO an investigator should eventually have more global stats as well such as keeping track if they're doing good, doing poorly, flirting, etc.
     should also have methods like "check each day to see when the most recent time we knew about temperature was"
  */
+import 'Day.dart';
+import 'DayFactory.dart';
+//dr jj
 class Investigator {
+    List<Day> days = new List<Day>();
+    Investigator() {
+        days.add(DayFactory.day1());
+    }
+
+
 
 }

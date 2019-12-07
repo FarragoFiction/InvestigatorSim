@@ -18,10 +18,22 @@
       //TODO If we KNOW every abnormal temp before this day is high we can write things like that, else be vaguer.
  */
 class DataPoint {
+    static String TEMPERATURE = "temperature";
+    static String BLOOD_PRESSURE = "blood_pressure";
+    static String DEATH = "death";
     String name;
     String newComment;
     String changeCommentLastAbnormal;
     String changeCommentLastNormal;
     bool valueAbnormal;
+
+    DataPoint(this.name, this.newComment, this.changeCommentLastAbnormal, this.changeCommentLastNormal, this.valueAbnormal) {
+
+    }
+
+    //TODO need to ask the investigator what the last value for this was. (if none, do new comment)
+    String getComment() {
+
+    }
 
 }
