@@ -6,7 +6,7 @@ a list of variables you set to true at the end of this (just strings)
 how many action points it secretly cost to do this thing
 and MAYBE a list of variables you set to false at the end of this. (might be redundant)
 
-TODO maybe have different response text depending on if the speaker likes or dislikes you
+TODO maybe have different response text depending on if the speaker likes or dislikes you (maybe speaker should be an object)
 TODO would also have a response list out how it affects the speakers opinion of you
 
 TODO allow variables to be set that don't just reflect a data point (such as, killing all patients, etc)

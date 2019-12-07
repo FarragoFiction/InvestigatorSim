@@ -14,7 +14,7 @@ class Question {
 
     String text;
     //responses will handle adding themselves to their question
-    List<Response> responses;
+    List<Response> responses = new List<Response>();
     String speaker;
     Question(this.text, this.speaker);
 

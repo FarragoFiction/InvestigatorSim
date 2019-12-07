@@ -12,9 +12,19 @@ import 'Question.dart';
 class Day {
     String title;
     List<DataPoint> datapoints = new List<DataPoint>();
+    //Question order is random
     List<Question> questions = new List<Question>();
     List<String> datapointsGathered = new List<String>();
-    int totalPointsAvailable = 5; //can change depending on what is going on in the universe?
 
     Day(this.title, this.datapoints, this.questions);
+
+    //when you're asked a question, remove it from the pile no matter the response
+    bool outOfQuestions() {
+        return questions.isEmpty;
+    }
+
+    Question getNextQuestion() {
+        questions.shuffle();
+        return questions.removeLast();
+    }
 }

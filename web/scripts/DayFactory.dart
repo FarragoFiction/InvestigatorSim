@@ -60,8 +60,8 @@ abstract class DayFactory {
       new Response(question1, "No", "Phew, now I don't have to ask Jack how the thermometer works. He's scary.", <String>[],0);
 
       Question question2 = new Question("Should we check the patients blood pressure, Investigator?", Question.GENOCIDE_JACK);
-      new Response(question1, "Yes", "Knife goes in. Blood comes out. I will monitor how strong the spray is.", <String>[DataPoint.BLOOD_PRESSURE],1);
-      new Response(question1, "No", "...I suppose you are the expert.", <String>[],0);
+      new Response(question2, "Yes", "Knife goes in. Blood comes out. I will monitor how strong the spray is.", <String>[DataPoint.BLOOD_PRESSURE],1);
+      new Response(question2, "No", "...I suppose you are the expert.", <String>[],0);
 
       questions.add(question1);
       questions.add(question2);
@@ -75,8 +75,8 @@ abstract class DayFactory {
         new Response(question1, "No", "Oh...Okay...", <String>[],0);
 
         Question question2 = new Question("Ugh. Should I check the patients temperature, Investigator?", Question.GENOCIDE_JACK);
-        new Response(question1, "Yes", "So boring. There's not even a thing to stab them with.", <String>[DataPoint.TEMPERATURE],1);
-        new Response(question1, "No", "Whatever.", <String>[],0);
+        new Response(question2, "Yes", "So boring. There's not even a thing to stab them with.", <String>[DataPoint.TEMPERATURE],1);
+        new Response(question2, "No", "Whatever.", <String>[],0);
 
         questions.add(question1);
         questions.add(question2);
@@ -90,8 +90,8 @@ abstract class DayFactory {
         new Response(question1, "No", "Phew, now I don't have to ask Jack how the thermometer works. He's scary.", <String>[],0);
 
         Question question2 = new Question("Should we kill the patients, Investigator?", Question.GENOCIDE_JACK);
-        new Response(question1, "Yes", "Finally, some good fucking content", <String>[DataPoint.DEATH],88);
-        new Response(question1, "No", "...I suppose you are the expert.", <String>[],0);
+        new Response(question2, "Yes", "Finally, some good fucking content", <String>[DataPoint.DEATH],88);
+        new Response(question2, "No", "...I suppose you are the expert.", <String>[],0);
 
         questions.add(question1);
         questions.add(question2);
