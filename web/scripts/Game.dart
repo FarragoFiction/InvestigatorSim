@@ -52,13 +52,14 @@ class Game {
     }
 
     void end() {
+        hasEnded = true;
         if(dayPatientsCulled != null) {
             int index = days.indexOf(dayPatientsCulled);
-            if(index ==1) {
+            if(index ==0) {
                 displayReport(DayFactory.endingDay1);
-            }else if(index ==2) {
+            }else if(index ==1) {
                 displayReport(DayFactory.endingDay2);
-            }else if(index ==3) {
+            }else if(index ==2) {
                 displayReport(DayFactory.endingDay3);
             }else {
                 displayReport("ERROR: MURDER NOT FOUND");
@@ -76,8 +77,15 @@ class Game {
     }
 
     void displayReport(String report) {
+        print("displaying report");
         reportElement.style.display = "block";
-        DivElement header = new DivElement()..text = currentDay.title;
+        DivElement header;
+        if(hasEnded) {
+            header = new DivElement()..text = "Final Report";
+        }else {
+            header = new DivElement()..text = currentDay.title;
+        }
+        header.classes.add("header");
         DivElement body = new DivElement()..setInnerHtml(report);
         ButtonElement signature = new ButtonElement()..text = "Approved, Doctor J.J.";
         reportElement.append(header);
@@ -100,7 +108,7 @@ class Game {
     }
 
     void displayNext() {
-        print("displaying the next thing");
+        print("displaying the next thing, cull is $dayPatientsCulled");
         if(dayPatientsCulled != null) {
             end();
             return;
@@ -164,8 +172,9 @@ class Game {
     void displayResponse(Response response) {
         responseElement.style.display = "block";
         currentDay.processResponse(response);
+        pointsToday += response.actionPoints;
         responseElement.text = response.responseText;
-        ButtonElement ok = new ButtonElement()..text = "Carry On";
+        ButtonElement ok = new ButtonElement()..text = "Carry On"..classes.add("confirm-button");
         ok.onClick.listen((Event e) {
             responseElement.style.display = "none";
             displayNext();

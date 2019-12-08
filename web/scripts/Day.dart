@@ -25,6 +25,7 @@ class Day {
         previousDays = new List.from(previousDays.reversed);
         String ret = "";
         for(String dp in datapointsGathered) {
+            print("checking gathered datapoint $dp");
             Day day = getPrevDataPoint(dp, previousDays);
             if(day == null) {
                 ret = "$ret ${datapoints[dp].newComment}";
@@ -34,7 +35,10 @@ class Day {
                 ret = "$ret ${datapoints[dp].commentLastNormal}";
             }
             if(datapoints[dp].valueAbnormal) game.abnormalitiesFound ++;
-            if(datapoints[dp].name == DataPoint.DEATH) game.dayPatientsCulled = this;
+            if(datapoints[dp].name == DataPoint.DEATH) {
+                print("noting killed patients");
+                game.dayPatientsCulled = this;
+            }
         }
         if(ret.isEmpty) {
             ret = "We continue to make no progress figuring out this mysterious disease.";

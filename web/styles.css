@@ -16,6 +16,10 @@ html, body {
   padding: 20px;
 }
 
+.header{
+    font-weight: bold;
+}
+
 #report{
     position: absolute;
     display: none;
