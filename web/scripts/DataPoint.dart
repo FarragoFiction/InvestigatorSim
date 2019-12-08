@@ -23,11 +23,11 @@ class DataPoint {
     static String DEATH = "death";
     String name;
     String newComment;
-    String changeCommentLastAbnormal;
-    String changeCommentLastNormal;
+    String commentLastAbnormal;
+    String commentLastNormal;
     bool valueAbnormal;
 
-    DataPoint(this.name, this.newComment, this.changeCommentLastAbnormal, this.changeCommentLastNormal, this.valueAbnormal) {
+    DataPoint(this.name, this.newComment, this.commentLastAbnormal, this.commentLastNormal, this.valueAbnormal) {
 
     }
 

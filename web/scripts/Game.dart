@@ -49,13 +49,26 @@ class Game {
     }
 
     void endDay() {
-        //TODO display report, increment day
-        window.alert("report TODO");
-        //TODO do this AFTER displaying report, so you don't skip the last report on accident.
-        currentDayIndex ++;
-        if (currentDayIndex >= days.length) {
-            end();
-        }
+        displayReport();
+    }
+
+    void displayReport() {
+        DivElement header = new DivElement()..text = currentDay.title;
+        DivElement body = new DivElement()..text = currentDay.report(days.sublist(0,currentDayIndex));
+        ButtonElement signature = new ButtonElement()..text = "Approved, Doctor J.J.";
+        reportElement.append(header);
+        reportElement.append(body);
+        reportElement.append(signature);
+
+        signature.onClick.listen((Event e) {
+            currentDayIndex ++;
+            if (currentDayIndex >= days.length) {
+                end();
+                return;
+            }
+            displayNext();
+        });
+
     }
 
     void displayNext() {
@@ -70,6 +83,7 @@ class Game {
         currentDayElement.text = currentDay.title;
         questionElement.text = "";
         responseElement.text = "";
+        reportElement.text = "";
 
         displayQuestion(currentDay.getNextQuestion());
     }
@@ -114,7 +128,7 @@ class Game {
 
 
     void displayResponse(Response response) {
-        //TODO apply effects of response
+        currentDay.processResponse(response);
         responseElement.text = response.responseText;
         ButtonElement ok = new ButtonElement()..text = "Carry On";
         ok.onClick.listen((Event e) {

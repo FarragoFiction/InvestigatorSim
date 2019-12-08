@@ -22,34 +22,34 @@ abstract class DayFactory {
 
     }
 
-    static List<DataPoint> day1DataPoints() {
-      List<DataPoint> dataPoints = new List<DataPoint>();
+    static Map<String,DataPoint> day1DataPoints() {
+      Map<String,DataPoint> dataPoints = new Map<String,DataPoint>();
       //only new values are valid since its the first day
       DataPoint temp = new DataPoint(DataPoint.TEMPERATURE, "Despite the flu like symptoms, the temperature of the patients remains normal.","ERROR THIS SHOULDNT HAPPEN","ERROR THIS SHOULDNT HAPPEN", false);
-      dataPoints.add(temp);
+      dataPoints[temp.name]=(temp);
 
       DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is normal. Note, do not allow Jack to draw blood again. The patients seem to dislike it.","ERROR THIS SHOULDNT HAPPEN","ERROR THIS SHOULDNT HAPPEN", false);
-      dataPoints.add(blood);
+      dataPoints[blood.name]=(blood);
       return dataPoints;
     }
 
-    static List<DataPoint> day2DataPoints() {
-        List<DataPoint> dataPoints = new List<DataPoint>();
+    static Map<String,DataPoint> day2DataPoints() {
+        Map<String,DataPoint> dataPoints = new Map<String,DataPoint>();
         DataPoint temp = new DataPoint(DataPoint.TEMPERATURE, "Despite the flu like symptoms, the temperature of the patients remains normal.","ERROR THIS SHOULDNT HAPPEN","Body temperature remains within normal tolerances for all patients.", false);
-        dataPoints.add(temp);
+        dataPoints[temp.name]=(temp);
 
         DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Why didn't we check this sooner?","ERROR THIS SHOULDNT HAPPEN","ERROR THIS SHOULDNT HAPPEN", false);
-        dataPoints.add(blood);
+        dataPoints[blood.name]=(blood);
         return dataPoints;
     }
 
-    static List<DataPoint> day3DataPoints() {
-        List<DataPoint> dataPoints = new List<DataPoint>();
+    static Map<String,DataPoint> day3DataPoints() {
+        Map<String,DataPoint> dataPoints = new Map<String,DataPoint>();
         DataPoint temp = new DataPoint(DataPoint.TEMPERATURE, "Despite the flu like symptoms, the temperature of the patients remains normal.","ERROR THIS SHOULDNT HAPPEN","Body temperature remains within normal tolerances for all patients.", false);
-        dataPoints.add(temp);
+        dataPoints[temp.name]=(temp);
 
         DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?","Blood pressure continues to spike to worrying levels. Blood volume, however, somehow appears reduced.", false);
-        dataPoints.add(blood);
+        dataPoints[blood.name]=(blood);
         return dataPoints;
     }
 
