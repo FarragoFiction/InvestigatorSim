@@ -18,9 +18,22 @@
       //TODO If we KNOW every abnormal temp before this day is high we can write things like that, else be vaguer.
  */
 class DataPoint {
-    static String TEMPERATURE = "temperature";
-    static String BLOOD_PRESSURE = "blood_pressure";
-    static String DEATH = "death";
+    static String TEMPERATURE = "temperature"; //take their temperature
+    static String BLOOD_PRESSURE = "blood_pressure"; //take their blood pressure
+    static String DEATH = "death"; //kill them
+    static String PAIN = "pain"; //ask them to rate their pain on the pain scale
+    static String LUNGS = "lungs"; //listen to their lungs
+    static String PULSE="pulse"; //take their pulse
+    static String OBSERVE="observe"; //give them a visual examination
+    static String MOTOR="motor"; //test their motor system, have them walk around, touch their toes, etc
+    static String COGNITION="cognition"; //ask them simple questions, whats todays date, do you know your name, can you do this simple math/reading test
+    static String IMMUNE_SYSTEM="immune_system"; //test how their immune system is working, do they have secondary infections that might be muddying the results, etc
+
+    //if its day 4 and they haven't eaten yet, they die here.
+    static String APPETITE = "appetite"; //sample it by feeding them
+    //if at any point its been at least three days since they've had water, they die of thirst.
+    static String THIRST = "thirst"; //sample it by giving them water
+
     String name;
     String newComment;
     String commentLastAbnormal;

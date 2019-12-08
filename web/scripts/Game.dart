@@ -13,6 +13,10 @@ class Game {
     bool hasEnded = false;
 
     Day dayPatientsCulled;
+    //if its been more than three days without giving them water, they die
+    bool diedOfThirst = false;
+    //if its day four and they haven't eaten yet, they die
+    bool diedOfHunger = false;
 
     List<Day> days = new List<Day>();
     int currentDayIndex = 0;
