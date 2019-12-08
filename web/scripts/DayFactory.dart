@@ -22,6 +22,13 @@ abstract class DayFactory {
 
     }
 
+    static String endingDay1 = "No. Never again. We culled them as soon as we could, I can't let what happened to HotPinkGard happen here. Its the only way we can survive.";
+    static String endingDay2 = "The disease is progresing too quickly. It was a hard decision, but we can't risk it spreading to the rest of the population, even if it means we lack data.";
+    static String endingDay3 = "We are all sons of bitches. We killed them all, each and every one. But it was too little, too late. It's spread, past any ability to quarantine. And now we don't even have the data on what the disease does past day three. We were fools.";
+    static String triedEnding = "We did everything we could. The patients still died. They infected the medical staff. Who infected their family. Who infected everyone else. We have three day. That's how long the patients had. God save us all.";
+    static String sabotogeEnding = "Everything went smoothly, my cover remains intact, and all patients converted successfully and spread the Life Force throughout the target city. We can easily scale this up to the rest of the cities on this planet. Praise Nidhogg.";
+
+
     static Map<String,DataPoint> day1DataPoints() {
       Map<String,DataPoint> dataPoints = new Map<String,DataPoint>();
       //only new values are valid since its the first day
@@ -50,6 +57,9 @@ abstract class DayFactory {
 
         DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?","Blood pressure continues to spike to worrying levels. Blood volume, however, somehow appears reduced.", false);
         dataPoints[blood.name]=(blood);
+
+        DataPoint death = new DataPoint(DataPoint.DEATH, "We have decided to cull the patients, to prevent further spread of this mysterious disease.","ERROR","ERROR", true);
+        dataPoints[death.name]=(death);
         return dataPoints;
     }
 

@@ -34,6 +34,7 @@ class Day {
                 ret = "$ret ${datapoints[dp].commentLastNormal}";
             }
             if(datapoints[dp].valueAbnormal) game.abnormalitiesFound ++;
+            if(datapoints[dp].name == DataPoint.DEATH) game.dayPatientsCulled = this;
         }
         if(ret.isEmpty) {
             ret = "We continue to make no progress figuring out this mysterious disease.";

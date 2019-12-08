@@ -10,6 +10,10 @@ class Game {
     //the lower this is the more you are sabotaging the investigation
     int abnormalitiesFound = 0;
 
+    bool hasEnded = false;
+
+    Day dayPatientsCulled;
+
     List<Day> days = new List<Day>();
     int currentDayIndex = 0;
 
@@ -48,35 +52,59 @@ class Game {
     }
 
     void end() {
-        //todo figure out which ending did you earn
-        window.alert("ending todo");
+        if(dayPatientsCulled != null) {
+            int index = days.indexOf(dayPatientsCulled);
+            if(index ==1) {
+                displayReport(DayFactory.endingDay1);
+            }else if(index ==2) {
+                displayReport(DayFactory.endingDay2);
+            }else if(index ==3) {
+                displayReport(DayFactory.endingDay3);
+            }else {
+                displayReport("ERROR: MURDER NOT FOUND");
+            };
+
+        }else if(abnormalitiesFound >1) {
+            displayReport(DayFactory.triedEnding);
+        }else {
+            displayReport(DayFactory.sabotogeEnding);
+        }
     }
 
     void endDay() {
-        displayReport();
+        displayReport(currentDay.report(days.sublist(0,currentDayIndex), this));
     }
 
-    void displayReport() {
+    void displayReport(String report) {
+        reportElement.style.display = "block";
         DivElement header = new DivElement()..text = currentDay.title;
-        DivElement body = new DivElement()..text = currentDay.report(days.sublist(0,currentDayIndex), this);
+        DivElement body = new DivElement()..setInnerHtml(report);
         ButtonElement signature = new ButtonElement()..text = "Approved, Doctor J.J.";
         reportElement.append(header);
         reportElement.append(body);
         reportElement.append(signature);
 
         signature.onClick.listen((Event e) {
-            currentDayIndex ++;
-            if (currentDayIndex >= days.length) {
-                end();
-                return;
+            if(!hasEnded) {
+                reportElement.text = "";
+                reportElement.style.display = "none";
+                currentDayIndex ++;
+                if (currentDayIndex >= days.length) {
+                    end();
+                    return;
+                }
+                displayNext();
             }
-            displayNext();
         });
 
     }
 
     void displayNext() {
         print("displaying the next thing");
+        if(dayPatientsCulled != null) {
+            end();
+            return;
+        }
         //for the day we're on, if we still have action points, look for the next question
         //if we're out of action points, or there are no more questions, display report.
         //otherwise, display the question
@@ -93,6 +121,7 @@ class Game {
     }
 
     void displayQuestion(Question question) {
+        questionElement.style.display = "block";
         questionElement.children.forEach((child) => child.remove);
         DivElement questionText = new DivElement()
             ..text = question.text;
@@ -123,6 +152,7 @@ class Game {
             for (Element e in form.children) {
                 if (e is RadioButtonInputElement &&
                     (e as RadioButtonInputElement).checked) {
+                    questionElement.style.display="none";
                     displayResponse(question.responses[int.parse(e.value)]);
                     break;
                 }
@@ -132,10 +162,12 @@ class Game {
 
 
     void displayResponse(Response response) {
+        responseElement.style.display = "block";
         currentDay.processResponse(response);
         responseElement.text = response.responseText;
         ButtonElement ok = new ButtonElement()..text = "Carry On";
         ok.onClick.listen((Event e) {
+            responseElement.style.display = "none";
             displayNext();
         });
         responseElement.append(ok);

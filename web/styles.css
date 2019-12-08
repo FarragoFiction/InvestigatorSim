@@ -15,3 +15,13 @@ html, body {
 #output {
   padding: 20px;
 }
+
+#report{
+    position: absolute;
+    display: none;
+    top: 0px;
+    background: white;
+    width: 1000px;
+    height: 1000px;
+    border: 1px solid black;
+}
