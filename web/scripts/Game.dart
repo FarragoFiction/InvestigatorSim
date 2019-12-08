@@ -6,6 +6,10 @@ import 'Question.dart';
 import 'Response.dart';
 //keep all the htmlm in here, don't let sub objects know how to render themselves so they can be unit tested
 class Game {
+
+    //the lower this is the more you are sabotaging the investigation
+    int abnormalitiesFound = 0;
+
     List<Day> days = new List<Day>();
     int currentDayIndex = 0;
 
@@ -54,7 +58,7 @@ class Game {
 
     void displayReport() {
         DivElement header = new DivElement()..text = currentDay.title;
-        DivElement body = new DivElement()..text = currentDay.report(days.sublist(0,currentDayIndex));
+        DivElement body = new DivElement()..text = currentDay.report(days.sublist(0,currentDayIndex), this);
         ButtonElement signature = new ButtonElement()..text = "Approved, Doctor J.J.";
         reportElement.append(header);
         reportElement.append(body);

@@ -7,6 +7,7 @@ total points in a day is how many things you can afford to do before its time to
  */
 
 import 'DataPoint.dart';
+import 'Game.dart';
 import 'Question.dart';
 import 'Response.dart';
 
@@ -20,8 +21,8 @@ class Day {
     Day(this.title, this.datapoints, this.questions);
 
     //just the body of the report
-    String report(List<Day> previousDays) {
-        previousDays = previousDays.reversed;
+    String report(List<Day> previousDays, Game game) {
+        previousDays = new List.from(previousDays.reversed);
         String ret = "";
         for(String dp in datapointsGathered) {
             Day day = getPrevDataPoint(dp, previousDays);
@@ -32,6 +33,10 @@ class Day {
             }else{
                 ret = "$ret ${datapoints[dp].commentLastNormal}";
             }
+            if(datapoints[dp].valueAbnormal) game.abnormalitiesFound ++;
+        }
+        if(ret.isEmpty) {
+            ret = "We continue to make no progress figuring out this mysterious disease.";
         }
         return ret;
     }
