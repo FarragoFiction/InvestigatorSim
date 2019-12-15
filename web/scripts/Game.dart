@@ -71,6 +71,10 @@ class Game {
                 displayReport("ERROR: MURDER NOT FOUND");
             };
 
+        }else if(diedOfThirst) {
+            displayReport(DayFactory.hungerEnding);
+        }else if(diedOfHunger) {
+            displayReport(DayFactory.thirstEnding);
         }else if(abnormalitiesFound >1) {
             displayReport(DayFactory.triedEnding);
         }else {
@@ -141,7 +145,6 @@ class Game {
     void checkHungerAndThirst() {
         checkHunger();
         checkThirst();
-
     }
 
     void checkThirst() {
