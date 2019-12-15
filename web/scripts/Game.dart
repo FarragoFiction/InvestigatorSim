@@ -1,5 +1,6 @@
 import 'dart:html';
 
+import 'DataPoint.dart';
 import 'Day.dart';
 import 'DayFactory.dart';
 import 'Question.dart';
@@ -22,6 +23,7 @@ class Game {
     int currentDayIndex = 0;
 
     Day get currentDay => days[currentDayIndex];
+    List<Day> get prevDays => days.sublist(0,currentDayIndex);
     Element container = new DivElement();
     Element questionElement = new DivElement()
         ..id = "question";
@@ -77,7 +79,7 @@ class Game {
     }
 
     void endDay() {
-        displayReport(currentDay.report(days.sublist(0,currentDayIndex), this));
+        displayReport(currentDay.report(prevDays, this));
     }
 
     void displayReport(String report) {
@@ -113,7 +115,8 @@ class Game {
 
     void displayNext() {
         print("displaying the next thing, cull is $dayPatientsCulled");
-        if(dayPatientsCulled != null) {
+        checkHungerAndThirst();
+        if(dayPatientsCulled != null || diedOfHunger || diedOfThirst) {
             end();
             return;
         }
@@ -130,6 +133,19 @@ class Game {
         reportElement.text = "";
 
         displayQuestion(currentDay.getNextQuestion());
+    }
+
+    //if its day four and no data points for hunger have EVER been gathered, die
+    //or, if the last day thirst data has been collected was three days ago or more, die
+    //science has responsibilities, yo
+    void checkHungerAndThirst() {
+        List<Day> previous = prevDays;
+        if(currentDayIndex == 3) {
+            Day lastAte = Day.getPrevDataPoint(DataPoint.APPETITE, prevDays);
+            if(lastAte == null) {
+                diedOfHunger = true; //whoops, don't you know you need to feed a fever and starve a cold....or was it the other way around? do they even have a fever? who cares?
+            }
+        }
     }
 
     void displayQuestion(Question question) {

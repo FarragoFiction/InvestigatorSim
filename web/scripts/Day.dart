@@ -56,6 +56,7 @@ class Day {
                 return day;
             }
         }
+        return null;
     }
 
     void processResponse(Response response) {
