@@ -74,9 +74,9 @@ class Game {
             };
 
         }else if(diedOfThirst) {
-            displayReport(DayFactory.hungerEnding);
-        }else if(diedOfHunger) {
             displayReport(DayFactory.thirstEnding);
+        }else if(diedOfHunger) {
+            displayReport(DayFactory.hungerEnding);
         }else if(abnormalitiesFound >1) {
             displayReport(DayFactory.triedEnding);
         }else if(hasMadeAtLeastOneTest){
@@ -153,9 +153,9 @@ class Game {
 
     void checkThirst() {
         Day lastDrank = Day.getPrevDataPoint(DataPoint.THIRST, prevDays);
-        if(lastDrank == null && currentDayIndex >= 3) {
+        if(lastDrank == null && currentDayIndex >= 2) {
           diedOfThirst = true;
-      }else if (currentDayIndex >= 3) {
+      }else if (currentDayIndex >= 2) {
           //whats the index of the last day you gave the subjects water? how long ago was it?
           int lastDayIndex = days.indexOf(lastDrank);
           if(currentDayIndex - lastDayIndex > 3) diedOfThirst;
