@@ -139,13 +139,27 @@ class Game {
     //or, if the last day thirst data has been collected was three days ago or more, die
     //science has responsibilities, yo
     void checkHungerAndThirst() {
-        List<Day> previous = prevDays;
-        if(currentDayIndex == 3) {
-            Day lastAte = Day.getPrevDataPoint(DataPoint.APPETITE, prevDays);
-            if(lastAte == null) {
-                diedOfHunger = true; //whoops, don't you know you need to feed a fever and starve a cold....or was it the other way around? do they even have a fever? who cares?
-            }
-        }
+        checkHunger();
+        checkThirst();
+
+    }
+
+    void checkThirst() {
+        Day lastDrank = Day.getPrevDataPoint(DataPoint.THIRST, prevDays);
+        if(lastDrank == null && currentDayIndex > 2) {
+          diedOfThirst = true;
+      }else if (currentDayIndex > 3) {
+          //whats the index of the last day you gave the subjects water? how long ago was it?
+      }
+    }
+
+    void checkHunger() {
+      if(currentDayIndex == 3) {
+          Day lastAte = Day.getPrevDataPoint(DataPoint.APPETITE, prevDays);
+          if(lastAte == null) {
+              diedOfHunger = true; //whoops, don't you know you need to feed a fever and starve a cold....or was it the other way around? do they even have a fever? who cares?
+          }
+      }
     }
 
     void displayQuestion(Question question) {
