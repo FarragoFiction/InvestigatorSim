@@ -152,6 +152,9 @@ abstract class DayFactory {
 
       questions.add(question1);
       questions.add(question2);
+      questions.add(question3);
+      questions.add(question4);
+
       return questions;
     }
 
@@ -175,6 +178,8 @@ abstract class DayFactory {
 
         questions.add(question1);
         questions.add(question2);
+        questions.add(question3);
+        questions.add(question4);
         return questions;
     }
 
@@ -198,6 +203,8 @@ abstract class DayFactory {
 
         questions.add(question1);
         questions.add(question2);
+        questions.add(question3);
+        questions.add(question4);
         return questions;
     }
 
@@ -221,6 +228,8 @@ abstract class DayFactory {
 
         questions.add(question1);
         questions.add(question2);
+        questions.add(question3);
+        questions.add(question4);
         return questions;
     }
 
