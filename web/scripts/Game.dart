@@ -12,6 +12,7 @@ class Game {
     int abnormalitiesFound = 0;
 
     bool hasEnded = false;
+    bool hasMadeAtLeastOneTest = false;
 
     Day dayPatientsCulled;
     //if its been more than three days without giving them water, they die
@@ -41,6 +42,7 @@ class Game {
         days.add(DayFactory.day1());
         days.add(DayFactory.day2());
         days.add(DayFactory.day3());
+        days.add(DayFactory.day4());
     }
 
     //don't worry about graphics or anything else just yet, this is a proof of concept
@@ -77,8 +79,10 @@ class Game {
             displayReport(DayFactory.thirstEnding);
         }else if(abnormalitiesFound >1) {
             displayReport(DayFactory.triedEnding);
-        }else {
+        }else if(hasMadeAtLeastOneTest){
             displayReport(DayFactory.sabotogeEnding);
+        }else {
+            displayReport(DayFactory.sabotogeEndingFailure);
         }
     }
 
@@ -149,9 +153,9 @@ class Game {
 
     void checkThirst() {
         Day lastDrank = Day.getPrevDataPoint(DataPoint.THIRST, prevDays);
-        if(lastDrank == null && currentDayIndex > 2) {
+        if(lastDrank == null && currentDayIndex >= 3) {
           diedOfThirst = true;
-      }else if (currentDayIndex > 3) {
+      }else if (currentDayIndex >= 3) {
           //whats the index of the last day you gave the subjects water? how long ago was it?
           int lastDayIndex = days.indexOf(lastDrank);
           if(currentDayIndex - lastDayIndex > 3) diedOfThirst;
@@ -159,7 +163,7 @@ class Game {
     }
 
     void checkHunger() {
-      if(currentDayIndex == 3) {
+      if(currentDayIndex == 4) {
           Day lastAte = Day.getPrevDataPoint(DataPoint.APPETITE, prevDays);
           if(lastAte == null) {
               diedOfHunger = true; //whoops, don't you know you need to feed a fever and starve a cold....or was it the other way around? do they even have a fever? who cares?

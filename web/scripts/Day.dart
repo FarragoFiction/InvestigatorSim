@@ -25,6 +25,7 @@ class Day {
         previousDays = new List.from(previousDays.reversed);
         String ret = "";
         for(String dp in datapointsGathered) {
+            game.hasMadeAtLeastOneTest = true;
             print("checking gathered datapoint $dp");
             Day day = getPrevDataPoint(dp, previousDays);
             if(day == null) {
