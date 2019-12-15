@@ -150,6 +150,8 @@ class Game {
           diedOfThirst = true;
       }else if (currentDayIndex > 3) {
           //whats the index of the last day you gave the subjects water? how long ago was it?
+          int lastDayIndex = days.indexOf(lastDrank);
+          if(currentDayIndex - lastDayIndex > 3) diedOfThirst;
       }
     }
 
