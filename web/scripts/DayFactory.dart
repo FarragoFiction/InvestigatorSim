@@ -35,7 +35,7 @@ abstract class DayFactory {
     static String sabotogeEnding = "Everything went smoothly, my cover remains intact, and all patients converted successfully and spread the Life Force throughout the target city. We can easily scale this up to the rest of the cities on this planet. Praise Nidhogg.";
     static String sabotogeEndingFailure = "I regret nothing more than being caught in my subpar sabatoge. Nidhogg will convert you all.";
     static String hungerEnding = "The subjects are all dead. Autopsy reveals profound loss of tissue, both fatty and muscular, as well as abnormalities in the veins. Despite the clear and obvious signs of starvation, no sepisis or signs other co-occurant infections or diseases are present. <br><br>Subjects additionally went only four days of standard Fasting Protocol, a significantly shorter period of time than is required for starvation to set in, much less prove fatal. Just 24 hours ago, they had normal musculature and fat deposits. Just what was happening to their metabolism at the end? Given the reports of infection in other cities world wide, I fear we'll find out before too long...   ";
-    static String thirstEnding = "... This is a formal request to downcycle all relevant staff and complete a full and thorough investigation into how such an egregious display of negligence and incompetance could happen. I should not be required to remind staff that living creatures need water to survive, doubly so if they are sick. We are medical proffesionals here, not inebriated zoo keepers. All subjects have died, painfully, of thirst. ";
+    static String thirstEnding = "... This is a formal request to downcycle all relevant staff and complete a full and thorough investigation into how such an egregious display of negligence and incompetance could happen.<br> <br>I should not be required to remind staff that living creatures need water to survive, doubly so if they are sick. We are medical proffesionals here, not inebriated zoo keepers. All subjects have died, painfully, of thirst. ";
 
     static Map<String,DataPoint> day1DataPoints() {
       Map<String,DataPoint> dataPoints = new Map<String,DataPoint>();
@@ -142,6 +142,14 @@ abstract class DayFactory {
       new Response(question2, "Yes", "Knife goes in. Blood comes out. I will monitor how strong the spray is.", <String>[DataPoint.BLOOD_PRESSURE],1);
       new Response(question2, "No", "...I suppose you are the expert.", <String>[],0);
 
+      Question question3 = new Question("Should we feed the patients today, Investigator?", Question.INTERN_JIMMY);
+      new Response(question3, "Yes", "Oh good they were starting to look hungry.", <String>[DataPoint.APPETITE],1);
+      new Response(question3, "No", "Okay...but they look so hungry...", <String>[],0);
+
+      Question question4 = new Question("Should we give the patients water today, Investigator?", Question.INTERN_JIMMY);
+      new Response(question4, "Yes", "I wonder how I carry all that water to them?", <String>[DataPoint.THIRST],1);
+      new Response(question4, "No", "Oh good, I wasn't looking forward to carrying all that water.", <String>[],0);
+
       questions.add(question1);
       questions.add(question2);
       return questions;
@@ -156,6 +164,14 @@ abstract class DayFactory {
         Question question2 = new Question("Ugh. Should I check the patients temperature, Investigator?", Question.GENOCIDE_JACK);
         new Response(question2, "Yes", "So boring. There's not even a thing to stab them with.", <String>[DataPoint.TEMPERATURE],1);
         new Response(question2, "No", "Whatever.", <String>[],0);
+
+        Question question3 = new Question("Should we feed the patients today, Investigator?", Question.INTERN_JIMMY);
+        new Response(question3, "Yes", "Oh good they were starting to look hungry.", <String>[DataPoint.APPETITE],1);
+        new Response(question3, "No", "Okay...but they look so hungry...", <String>[],0);
+
+        Question question4 = new Question("Should we give the patients water today, Investigator?", Question.INTERN_JIMMY);
+        new Response(question4, "Yes", "I wonder how I carry all that water to them?", <String>[DataPoint.THIRST],1);
+        new Response(question4, "No", "Oh good, I wasn't looking forward to carrying all that water.", <String>[],0);
 
         questions.add(question1);
         questions.add(question2);
@@ -172,6 +188,14 @@ abstract class DayFactory {
         new Response(question2, "Yes", "Finally, some good fucking content", <String>[DataPoint.DEATH],88);
         new Response(question2, "No", "...I suppose you are the expert.", <String>[],0);
 
+        Question question3 = new Question("Should we feed the patients today, Investigator?", Question.INTERN_JIMMY);
+        new Response(question3, "Yes", "Oh good they were starting to look hungry.", <String>[DataPoint.APPETITE],1);
+        new Response(question3, "No", "Okay...but they look so hungry...", <String>[],0);
+
+        Question question4 = new Question("Should we give the patients water today, Investigator?", Question.INTERN_JIMMY);
+        new Response(question4, "Yes", "I wonder how I carry all that water to them?", <String>[DataPoint.THIRST],1);
+        new Response(question4, "No", "Oh good, I wasn't looking forward to carrying all that water.", <String>[],0);
+
         questions.add(question1);
         questions.add(question2);
         return questions;
@@ -186,6 +210,14 @@ abstract class DayFactory {
         Question question2 = new Question("Should we kill the patients, Investigator?", Question.GENOCIDE_JACK);
         new Response(question2, "Yes", "Finally, some good fucking content", <String>[DataPoint.DEATH],88);
         new Response(question2, "No", "...I suppose you are the expert.", <String>[],0);
+
+        Question question3 = new Question("Should we feed the patients today, Investigator?", Question.INTERN_JIMMY);
+        new Response(question3, "Yes", "Oh thank god they were starting to riot.", <String>[DataPoint.APPETITE],1);
+        new Response(question3, "No", "Okay...but...they keep screaming for food...", <String>[],0);
+
+        Question question4 = new Question("Should we give the patients water today, Investigator?", Question.INTERN_JIMMY);
+        new Response(question4, "Yes", "I wonder how I carry all that water to them?", <String>[DataPoint.THIRST],1);
+        new Response(question4, "No", "Oh good, I wasn't looking forward to carrying all that water.", <String>[],0);
 
         questions.add(question1);
         questions.add(question2);
