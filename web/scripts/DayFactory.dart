@@ -4,6 +4,7 @@ import 'Question.dart';
 import 'Response.dart';
 abstract class DayFactory {
 
+    //TODO make test page that just lists all days and stats/questions out
 
     //blood pressure normal, temperature normal
     static Day day1() {
@@ -25,6 +26,11 @@ abstract class DayFactory {
     //blood pressure high, temp normal, MASSIVE metabolism spike
     static Day day4() {
         return new Day("Day 4", day4DataPoints(), day4Questions());
+
+    }
+
+    static Day day5() {
+        return new Day("Day 5", day5DataPoints(), day5Questions());
 
     }
 
@@ -219,6 +225,31 @@ abstract class DayFactory {
         new Response(question2, "No", "...I suppose you are the expert.", <String>[],0);
 
         Question question3 = new Question("Should we feed the patients today, Investigator?", Question.INTERN_JIMMY);
+        new Response(question3, "Yes", "Oh thank god they were starting to riot.", <String>[DataPoint.APPETITE],1);
+        new Response(question3, "No", "Okay...but...they keep screaming for food...", <String>[],0);
+
+        Question question4 = new Question("Should we give the patients water today, Investigator?", Question.INTERN_JIMMY);
+        new Response(question4, "Yes", "I wonder how I carry all that water to them?", <String>[DataPoint.THIRST],1);
+        new Response(question4, "No", "Oh good, I wasn't looking forward to carrying all that water.", <String>[],0);
+
+        questions.add(question1);
+        questions.add(question2);
+        questions.add(question3);
+        questions.add(question4);
+        return questions;
+    }
+
+    static List<Question> day5Questions() {
+        List<Question> questions = new List<Question>();
+        Question question1 = new Question("Is it blood pressure time, Investigator?", Question.INTERN_JIMMY);
+        new Response(question1, "Yes", "I can do this!", <String>[DataPoint.TEMPERATURE],1);
+        new Response(question1, "No", "Aww...Okay...", <String>[],0);
+
+        Question question2 = new Question("Should we kill the patients, Investigator?", Question.GENOCIDE_JACK);
+        new Response(question2, "Yes", "Finally, some good fucking content", <String>[DataPoint.DEATH],88);
+        new Response(question2, "No", "...I suppose you are the expert.", <String>[],0);
+
+        Question question3 = new Question("can we please feed the patients today, Investigator?", Question.INTERN_JIMMY);
         new Response(question3, "Yes", "Oh thank god they were starting to riot.", <String>[DataPoint.APPETITE],1);
         new Response(question3, "No", "Okay...but...they keep screaming for food...", <String>[],0);
 

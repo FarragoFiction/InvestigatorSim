@@ -20,6 +20,25 @@ html, body {
     font-weight: bold;
 }
 
+
+table:not(.boringTable){
+    border: 1px solid black;
+    padding: 15px;
+}
+
+td:not(.boringTable){
+    border: 1px solid grey;
+}
+
+tr:not(.boringTable):nth-child(even){
+    background-color: #c4c4c4;
+}
+
+tr:not(.boringTable):nth-child(odd){
+    background-color: #696969;
+    color: white;
+}
+
 #report{
     position: absolute;
     display: none;

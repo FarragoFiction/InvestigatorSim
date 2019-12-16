@@ -73,4 +73,5 @@ class Day {
         questions.shuffle();
         return questions.removeLast();
     }
+
 }

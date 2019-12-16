@@ -6,4 +6,5 @@ void main() {
   Game game = new Game();
   game.attach(querySelector("#output"));
   game.start();
+  game.debugDisplay();
 }
