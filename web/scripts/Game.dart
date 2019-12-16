@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:html';
 
 import 'DataPoint.dart';
@@ -130,18 +131,32 @@ class Game {
         reportElement.append(signature);
 
         signature.onClick.listen((Event e) {
-            if(!hasEnded) {
-                reportElement.text = "";
-                reportElement.style.display = "none";
-                currentDayIndex ++;
-                if (currentDayIndex >= days.length) {
-                    end();
-                    return;
-                }
-                displayNext();
+            signReport();
+        });
+
+        StreamSubscription listener;
+        listener = window.onKeyDown.listen((KeyboardEvent e){
+            if(e.keyCode == KeyCode.ENTER) {
+                signReport();
+                listener.cancel();
             }
         });
 
+
+
+    }
+
+    void signReport() {
+      if(!hasEnded) {
+          reportElement.text = "";
+          reportElement.style.display = "none";
+          currentDayIndex ++;
+          if (currentDayIndex >= days.length) {
+              end();
+          }else {
+              displayNext();
+          }
+      }
     }
 
     void displayNext() {
@@ -224,6 +239,9 @@ class Game {
             form.append(choice);
             form.append(label);
             index ++;
+            //last one in list (hopefully 'no') will be default for testing
+            choice.focus();
+            choice.checked = true;
         }
         ButtonElement button = new ButtonElement()
             ..text = "Confirm Choice"
@@ -232,15 +250,27 @@ class Game {
         questionElement.append(form);
         questionElement.append(button);
         button.onClick.listen((Event e) {
-            for (Element e in form.children) {
-                if (e is RadioButtonInputElement &&
-                    (e as RadioButtonInputElement).checked) {
-                    questionElement.style.display="none";
-                    displayResponse(question.responses[int.parse(e.value)]);
-                    break;
-                }
+            submitChoice(form, question);
+        });
+
+        StreamSubscription listener;
+        listener = window.onKeyDown.listen((KeyboardEvent e){
+            if(e.keyCode == KeyCode.ENTER) {
+                submitChoice(form, question);
+                listener.cancel();
             }
         });
+    }
+
+    void submitChoice(FormElement form, Question question) {
+      for (Element e in form.children) {
+          if (e is RadioButtonInputElement &&
+              (e as RadioButtonInputElement).checked) {
+              questionElement.style.display="none";
+              displayResponse(question.responses[int.parse(e.value)]);
+              break;
+          }
+      }
     }
 
 
@@ -255,6 +285,15 @@ class Game {
             displayNext();
         });
         responseElement.append(ok);
+
+        StreamSubscription listener;
+        listener = window.onKeyDown.listen((KeyboardEvent e){
+            if(e.keyCode == KeyCode.ENTER) {
+                responseElement.style.display = "none";
+                displayNext();
+                listener.cancel();
+            }
+        });
     }
 
 }

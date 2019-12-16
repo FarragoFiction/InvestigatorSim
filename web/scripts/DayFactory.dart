@@ -115,7 +115,7 @@ abstract class DayFactory {
         DataPoint temp = new DataPoint(DataPoint.TEMPERATURE, "Despite the flu like symptoms, the temperature of the patients remains normal.","ERROR THIS SHOULDNT HAPPEN","Body temperature remains within normal tolerances for all patients.", false);
         dataPoints[temp.name]=(temp);
 
-        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?","Blood pressure continues to spike to worrying levels. Blood volume, however, somehow appears reduced.", true);
+        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure continues to spike to worrying levels. Blood volume, however, somehow appears reduced.","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?", true);
         dataPoints[blood.name]=(blood);
 
         DataPoint death = new DataPoint(DataPoint.DEATH, "We have decided to cull the patients, to prevent further spread of this mysterious disease.","ERROR","ERROR", true);
@@ -139,7 +139,7 @@ abstract class DayFactory {
         DataPoint temp = new DataPoint(DataPoint.TEMPERATURE, "The patients temperature remains well within normal tolerances.","ERROR THIS SHOULDNT HAPPEN","Body temperature remains normal.", false);
         dataPoints[temp.name]=(temp);
 
-        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?","Blood pressure continues to spike to worrying levels.", true);
+        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure continues to spike to worrying levels. Blood volume, however, somehow appears reduced.","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?", true);
         dataPoints[blood.name]=(blood);
 
         DataPoint death = new DataPoint(DataPoint.DEATH, "We have decided to cull the patients, to prevent further spread of this mysterious disease.","ERROR","ERROR", true);
@@ -162,7 +162,7 @@ abstract class DayFactory {
         DataPoint temp = new DataPoint(DataPoint.TEMPERATURE, "The patients temperature remains well within normal tolerances.","ERROR THIS SHOULDNT HAPPEN","Body temperature remains normal.", false);
         dataPoints[temp.name]=(temp);
 
-        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?","Blood pressure continues to spike to worrying levels.", true);
+        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure continues to spike to worrying levels. Blood volume, however, somehow appears reduced.","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?", true);
         dataPoints[blood.name]=(blood);
 
         DataPoint death = new DataPoint(DataPoint.DEATH, "We have decided to cull the patients, to prevent further spread of this mysterious disease.","ERROR","ERROR", true);
@@ -186,7 +186,7 @@ abstract class DayFactory {
         DataPoint temp = new DataPoint(DataPoint.TEMPERATURE, "The patients temperature remains well within normal tolerances.","ERROR THIS SHOULDNT HAPPEN","Body temperature remains normal.", false);
         dataPoints[temp.name]=(temp);
 
-        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?","Blood pressure continues to spike to worrying levels.", true);
+        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure continues to spike to worrying levels. Blood volume, however, somehow appears reduced.","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?", true);
         dataPoints[blood.name]=(blood);
 
         DataPoint death = new DataPoint(DataPoint.DEATH, "We have decided to cull the patients, to prevent further spread of this mysterious disease.","ERROR","ERROR", true);
@@ -210,7 +210,7 @@ abstract class DayFactory {
         DataPoint temp = new DataPoint(DataPoint.TEMPERATURE, "The patients temperature remains well within normal tolerances.","ERROR THIS SHOULDNT HAPPEN","Body temperature remains normal.", false);
         dataPoints[temp.name]=(temp);
 
-        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?","Blood pressure continues to spike to worrying levels.", true);
+        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure continues to spike to worrying levels. Blood volume, however, somehow appears reduced.","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?", true);
         dataPoints[blood.name]=(blood);
 
         DataPoint death = new DataPoint(DataPoint.DEATH, "We have decided to cull the patients, to prevent further spread of this mysterious disease.","ERROR","ERROR", true);
@@ -236,7 +236,7 @@ abstract class DayFactory {
         DataPoint temp = new DataPoint(DataPoint.TEMPERATURE, "The patients temperature remains well within normal tolerances.","ERROR THIS SHOULDNT HAPPEN","Body temperature remains normal.", false);
         dataPoints[temp.name]=(temp);
 
-        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?","Blood pressure continues to spike to worrying levels.", true);
+        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure continues to spike to worrying levels. Blood volume, however, somehow appears reduced.","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?", true);
         dataPoints[blood.name]=(blood);
 
         DataPoint death = new DataPoint(DataPoint.DEATH, "We have decided to cull the patients, to prevent further spread of this mysterious disease.","ERROR","ERROR", true);
@@ -259,7 +259,7 @@ abstract class DayFactory {
         DataPoint temp = new DataPoint(DataPoint.TEMPERATURE, "The patients temperature remains well within normal tolerances.","ERROR THIS SHOULDNT HAPPEN","Body temperature remains normal.", false);
         dataPoints[temp.name]=(temp);
 
-        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?","Blood pressure continues to spike to worrying levels.", true);
+        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure continues to spike to worrying levels. Blood volume, however, somehow appears reduced.","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?", true);
         dataPoints[blood.name]=(blood);
 
         DataPoint death = new DataPoint(DataPoint.DEATH, "We have decided to cull the patients, to prevent further spread of this mysterious disease.","ERROR","ERROR", true);
@@ -280,7 +280,7 @@ abstract class DayFactory {
         DataPoint temp = new DataPoint(DataPoint.TEMPERATURE, "The patients temperature remains well within normal tolerances.","ERROR THIS SHOULDNT HAPPEN","Body temperature remains normal.", false);
         dataPoints[temp.name]=(temp);
 
-        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?","Blood pressure continues to spike to worrying levels.", true);
+        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure continues to spike to worrying levels. Blood volume, however, somehow appears reduced.","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?", true);
         dataPoints[blood.name]=(blood);
 
         DataPoint death = new DataPoint(DataPoint.DEATH, "We have decided to cull the patients, to prevent further spread of this mysterious disease.","ERROR","ERROR", true);
