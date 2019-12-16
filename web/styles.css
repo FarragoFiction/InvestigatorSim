@@ -39,6 +39,13 @@ tr:not(.boringTable):nth-child(odd){
     color: white;
 }
 
+tr.boringTable:nth-child(even){
+    background-color: #d7fced;
+}
+
+tr.boringTable:nth-child(odd){
+    background-color: #fcd7f3;
+}
 #report{
     position: absolute;
     display: none;
