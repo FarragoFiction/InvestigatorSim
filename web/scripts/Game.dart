@@ -88,6 +88,8 @@ class Game {
             displayReport(DayFactory.thirstEnding);
         }else if(diedOfHunger) {
             displayReport(DayFactory.hungerEnding);
+        }else if(patientsCured) {
+            displayReport(DayFactory.cureEnding);
         }else if(abnormalitiesFound >1) {
             displayReport(DayFactory.triedEnding);
         }else if(hasMadeAtLeastOneTest){

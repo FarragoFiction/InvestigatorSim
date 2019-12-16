@@ -11,6 +11,8 @@ class Question {
     //placeholders
     static String INTERN_JIMMY = "images/jimmy.png";
     static String GENOCIDE_JACK = "images/jack.png";
+    static String RESEARCHER_JADEN = "images/jaden.png";
+
 
     String text;
     //responses will handle adding themselves to their question

@@ -67,6 +67,7 @@ abstract class DayFactory {
     static String sabotogeEndingFailure = "I regret nothing more than being caught in my subpar sabatoge. Nidhogg will convert you all.";
     static String hungerEnding = "The subjects are all dead. Autopsy reveals profound loss of tissue, both fatty and muscular, as well as abnormalities in the veins. Despite the clear and obvious signs of starvation, no sepisis or signs other co-occurant infections or diseases are present. <br><br>Subjects additionally went only four days of standard Fasting Protocol, a significantly shorter period of time than is required for starvation to set in, much less prove fatal. Just 24 hours ago, they had normal musculature and fat deposits. Just what was happening to their metabolism at the end? Given the reports of infection in other cities world wide, I fear we'll find out before too long...   ";
     static String thirstEnding = "... This is a formal request to downcycle all relevant staff and complete a full and thorough investigation into how such an egregious display of negligence and incompetance could happen.<br> <br>I should not be required to remind staff that living creatures need water to survive, doubly so if they are sick. We are medical proffesionals here, not inebriated zoo keepers. All subjects have died, painfully, of thirst. ";
+    static String cureEnding = "In what I can, in my experienced medical opinion, only call a 'miracle', the patients were cured on day 6 of their infection. We've made sure to spread the knowledge to all cities affected by the outbreak.  Yes, the psychological and physiological changes are off putting, but the patients are ALIVE when they seemed at death's doorstep. We can beat this, and then try to tackle the remaining symptoms with more time on the clock.";
 
     static Map<String,DataPoint> day1DataPoints() {
       Map<String,DataPoint> dataPoints = new Map<String,DataPoint>();
@@ -82,6 +83,9 @@ abstract class DayFactory {
 
       DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","ERROR THIS SHOULDNT HAPPEN", false);
       dataPoints[thirst.name]=(thirst);
+
+      DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "Standard antibiotics have no measurable effect on the patients.","ERROR THIS SHOULDNT HAPPEN","ERROR THIS SHOULDNT HAPPEN", false);
+      dataPoints[cure.name]=(cure);
 
 
       return dataPoints;
@@ -100,6 +104,9 @@ abstract class DayFactory {
 
         DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","Patients have no issues swallowing water, and passing it.", false);
         dataPoints[thirst.name]=(thirst);
+
+        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "Standard antivirals have no measurable effect on the patients.","ERROR THIS SHOULDNT HAPPEN","ERROR THIS SHOULDNT HAPPEN", false);
+        dataPoints[cure.name]=(cure);
         return dataPoints;
     }
 
@@ -119,6 +126,9 @@ abstract class DayFactory {
 
         DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","Patients have no issues swallowing water, and passing it.", false);
         dataPoints[thirst.name]=(thirst);
+
+        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "Standard antifungals have no measurable effect on the patients.","ERROR THIS SHOULDNT HAPPEN","ERROR THIS SHOULDNT HAPPEN", false);
+        dataPoints[cure.name]=(cure);
 
 
         return dataPoints;
@@ -140,6 +150,9 @@ abstract class DayFactory {
 
         DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","Patients have no issues swallowing water, and passing it.", false);
         dataPoints[thirst.name]=(thirst);
+
+        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "Autoimmune suppresants have no measurable effect on the patients.","ERROR THIS SHOULDNT HAPPEN","ERROR THIS SHOULDNT HAPPEN", false);
+        dataPoints[cure.name]=(cure);
         return dataPoints;
     }
 
@@ -160,6 +173,9 @@ abstract class DayFactory {
 
         DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","Patients have no issues swallowing water, and passing it.", false);
         dataPoints[thirst.name]=(thirst);
+
+        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "Extremely unscientific, last ditch magical spells have no measurable effect on the patients.","ERROR THIS SHOULDNT HAPPEN","ERROR THIS SHOULDNT HAPPEN", false);
+        dataPoints[cure.name]=(cure);
         return dataPoints;
     }
 
@@ -181,6 +197,9 @@ abstract class DayFactory {
 
         DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","Patients have no issues swallowing water, and passing it.", false);
         dataPoints[thirst.name]=(thirst);
+
+        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "It...it's a miracle. After exposure to a tree displaying a mutated strain of the infection, the patients have rapidly improved! They might not die! We might have a cure!","ERROR THIS SHOULDNT HAPPEN","ERROR THIS SHOULDNT HAPPEN", true);
+        dataPoints[cure.name]=(cure);
         return dataPoints;
     }
 
@@ -202,6 +221,11 @@ abstract class DayFactory {
 
         DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","Patients have no issues swallowing water, and passing it.", false);
         dataPoints[thirst.name]=(thirst);
+
+        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "It...it's a miracle. After exposure to a tree displaying a mutated strain of the infection, the patients have rapidly improved! They might not die! We might have a cure! We can fight fire with fire!","ERROR THIS SHOULDNT HAPPEN","ERROR THIS SHOULDNT HAPPEN", true);
+        dataPoints[cure.name]=(cure);
+
+
         return dataPoints;
     }
 
@@ -223,6 +247,9 @@ abstract class DayFactory {
 
         DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","Patients have no issues swallowing water, and passing it.", false);
         dataPoints[thirst.name]=(thirst);
+
+        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "It...it's a miracle. After exposure to a tree displaying a mutated strain of the infection, the patients have rapidly improved! They might not die! We might have a cure!","ERROR THIS SHOULDNT HAPPEN","ERROR THIS SHOULDNT HAPPEN", true);
+        dataPoints[cure.name]=(cure);
         return dataPoints;
     }
 
@@ -285,10 +312,16 @@ abstract class DayFactory {
       new Response(question4, "Yes", "I wonder how I carry all that water to them?", <String>[DataPoint.THIRST],1);
       new Response(question4, "No", "Oh good, I wasn't looking forward to carrying all that water.", <String>[],0);
 
+      Question question5 = new Question("I would like to investigate the effects of antibiotics on the patients, Lead Investigator.", Question.RESEARCHER_JADEN);
+      new Response(question5, "Yes", "Appreciated.", <String>[DataPoint.CUREREACTION],3);
+      new Response(question5, "No", "...as you say, Lead Investigator", <String>[],0);
+
       questions.add(question1);
       questions.add(question2);
       questions.add(question3);
       questions.add(question4);
+      questions.add(question5);
+
 
       return questions;
     }
@@ -311,10 +344,15 @@ abstract class DayFactory {
         new Response(question4, "Yes", "I wonder how I carry all that water to them?", <String>[DataPoint.THIRST],1);
         new Response(question4, "No", "Oh good, I wasn't looking forward to carrying all that water.", <String>[],0);
 
+        Question question5 = new Question("I would like to investigate the effects of antivirals on the patients, Lead Investigator.", Question.RESEARCHER_JADEN);
+        new Response(question5, "Yes", "Appreciated.", <String>[DataPoint.CUREREACTION],3);
+        new Response(question5, "No", "...as you say, Lead Investigator", <String>[],0);
+
         questions.add(question1);
         questions.add(question2);
         questions.add(question3);
         questions.add(question4);
+        questions.add(question5);
         return questions;
     }
 
@@ -336,10 +374,15 @@ abstract class DayFactory {
         new Response(question4, "Yes", "I wonder how I carry all that water to them?", <String>[DataPoint.THIRST],1);
         new Response(question4, "No", "Oh good, I wasn't looking forward to carrying all that water.", <String>[],0);
 
+        Question question5 = new Question("I would like to investigate the effects of antifungals on the patients, Lead Investigator.", Question.RESEARCHER_JADEN);
+        new Response(question5, "Yes", "Appreciated.", <String>[DataPoint.CUREREACTION],3);
+        new Response(question5, "No", "...as you say, Lead Investigator", <String>[],0);
+
         questions.add(question1);
         questions.add(question2);
         questions.add(question3);
         questions.add(question4);
+        questions.add(question5);
         return questions;
     }
 
@@ -361,10 +404,15 @@ abstract class DayFactory {
         new Response(question4, "Yes", "I wonder how I carry all that water to them?", <String>[DataPoint.THIRST],1);
         new Response(question4, "No", "Oh good, I wasn't looking forward to carrying all that water.", <String>[],0);
 
+        Question question5 = new Question("I would like to investigate the effects of autoimmune suppresants on the patients, Lead Investigator.", Question.RESEARCHER_JADEN);
+        new Response(question5, "Yes", "Appreciated.", <String>[DataPoint.CUREREACTION],3);
+        new Response(question5, "No", "...as you say, Lead Investigator", <String>[],0);
+
         questions.add(question1);
         questions.add(question2);
         questions.add(question3);
         questions.add(question4);
+        questions.add(question5);
         return questions;
     }
 
@@ -386,10 +434,15 @@ abstract class DayFactory {
         new Response(question4, "Yes", "I wonder how I carry all that water to them?", <String>[DataPoint.THIRST],1);
         new Response(question4, "No", "Oh good, I wasn't looking forward to carrying all that water.", <String>[],0);
 
+        Question question5 = new Question("I admit that I am stumped, Lead Investigator. Intern Jimmy, however, says that his Grandmother always tries standing on one foot while chanting 'Do Your Best' and at this point, doing something feels more productive than doing nothing. May we do this?", Question.RESEARCHER_JADEN);
+        new Response(question5, "Yes", "At least this won't be boring.", <String>[DataPoint.CUREREACTION],3);
+        new Response(question5, "No", "I apologize for the frivolity, Lead Investigator", <String>[],0);
+
         questions.add(question1);
         questions.add(question2);
         questions.add(question3);
         questions.add(question4);
+        questions.add(question5);
         return questions;
     }
 
@@ -411,10 +464,16 @@ abstract class DayFactory {
         new Response(question4, "Yes", "I wonder how I carry all that water to them?", <String>[DataPoint.THIRST],1);
         new Response(question4, "No", "Oh good, I wasn't looking forward to carrying all that water.", <String>[],0);
 
+        Question question5 = new Question("Where should I put this weird sample of an Infected Plant, Investigator? ", Question.INTERN_JIMMY);
+        new Response(question5, "Burn it. We can't risk more vectors of infection.", "Okay!", <String>[],1);
+        new Response(question5, "You may as well put it with the quarantined patients, Jimmy.", "Okay!", <String>[DataPoint.CUREREACTION],1);
+
+
         questions.add(question1);
         questions.add(question2);
         questions.add(question3);
         questions.add(question4);
+        questions.add(question5);
         return questions;
     }
 
