@@ -192,7 +192,7 @@ abstract class DayFactory {
     static List<Question> day3Questions() {
         List<Question> questions = new List<Question>();
         Question question1 = new Question("I'm ready to check the patients blood pressure, today, Investigator!", Question.INTERN_JIMMY);
-        new Response(question1, "Yes", "I can do this!", <String>[DataPoint.TEMPERATURE],1);
+        new Response(question1, "Yes", "I can do this!", <String>[DataPoint.BLOOD_PRESSURE],1);
         new Response(question1, "No", "Okay...", <String>[],0);
 
         Question question2 = new Question("Should we kill the patients, Investigator?", Question.GENOCIDE_JACK);
@@ -217,7 +217,7 @@ abstract class DayFactory {
     static List<Question> day4Questions() {
         List<Question> questions = new List<Question>();
         Question question1 = new Question("Is it blood pressure time, Investigator?", Question.INTERN_JIMMY);
-        new Response(question1, "Yes", "I can do this!", <String>[DataPoint.TEMPERATURE],1);
+        new Response(question1, "Yes", "I can do this!", <String>[DataPoint.BLOOD_PRESSURE],1);
         new Response(question1, "No", "Aww...Okay...", <String>[],0);
 
         Question question2 = new Question("Should we kill the patients, Investigator?", Question.GENOCIDE_JACK);
@@ -242,7 +242,7 @@ abstract class DayFactory {
     static List<Question> day5Questions() {
         List<Question> questions = new List<Question>();
         Question question1 = new Question("Is it blood pressure time, Investigator?", Question.INTERN_JIMMY);
-        new Response(question1, "Yes", "I can do this!", <String>[DataPoint.TEMPERATURE],1);
+        new Response(question1, "Yes", "I can do this!", <String>[DataPoint.BLOOD_PRESSURE],1);
         new Response(question1, "No", "Aww...Okay...", <String>[],0);
 
         Question question2 = new Question("Should we kill the patients, Investigator?", Question.GENOCIDE_JACK);
