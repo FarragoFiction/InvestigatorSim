@@ -102,6 +102,7 @@ class Game {
     void endDay() {
         //the only day a cure can happen
         if(currentDayIndex == 5) {
+            checkCure();
             if(patientsCured) {
                 //then day 7 and 8 are going to branch out
                 days[6] = DayFactory.altDay7();
@@ -170,6 +171,15 @@ class Game {
     void checkChanges() {
         checkHunger();
         checkThirst();
+        checkCure();
+    }
+
+    void checkCure() {
+        Day lastCureAttempt = Day.getPrevDataPoint(DataPoint.CUREREACTION, prevDays);
+        if(lastCureAttempt.datapoints[DataPoint.CUREREACTION].valueAbnormal) {
+            patientsCured = true;
+        }
+
     }
 
     void checkThirst() {
