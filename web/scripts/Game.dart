@@ -102,15 +102,6 @@ class Game {
 
     void endDay() {
         pointsToday = 0;
-        //the only day a cure can happen
-        if(currentDayIndex == 5) {
-            checkCure();
-            if(patientsCured) {
-                //then day 7 and 8 are going to branch out
-                days[6] = DayFactory.altDay7();
-                days[7] = DayFactory.altDay8();
-            }
-        }
         displayReport(currentDay.report(prevDays, this));
     }
 
@@ -191,9 +182,13 @@ class Game {
     }
 
     void checkCure() {
+        if(patientsCured) return;
         Day lastCureAttempt = Day.getPrevDataPoint(DataPoint.CUREREACTION, prevDays);
-        if(lastCureAttempt != null && lastCureAttempt.datapoints[DataPoint.CUREREACTION].valueAbnormal) {
+        if(lastCureAttempt != null && lastCureAttempt.getDataPoint(DataPoint.CUREREACTION).valueAbnormal) {
+            window.alert("patients cured");
             patientsCured = true;
+            days[6] = DayFactory.altDay7();
+            days[7] = DayFactory.altDay8();
         }
 
     }

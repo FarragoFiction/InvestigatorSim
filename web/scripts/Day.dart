@@ -51,7 +51,8 @@ class Day {
         return datapoints[key];
     }
 
-    static Day getPrevDataPoint(String datapointname, List<Day> previousDays) {
+    static Day getPrevDataPoint(String datapointname, List<Day> prev) {
+        Iterable<Day> previousDays = prev.reversed;
         for(Day day in previousDays) {
             if(day.datapointsGathered.contains(datapointname)) {
                 return day;
