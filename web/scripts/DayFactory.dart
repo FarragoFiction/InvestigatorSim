@@ -105,7 +105,7 @@ abstract class DayFactory {
         DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","Patients have no issues swallowing water, and passing it.", false);
         dataPoints[thirst.name]=(thirst);
 
-        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "Standard antivirals have no measurable effect on the patients.","ERROR THIS SHOULDNT HAPPEN","ERROR THIS SHOULDNT HAPPEN", false);
+        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "Standard antivirals have no measurable effect on the patients.","Standard antivirals have no measurable effect on the patients.","ERROR THIS SHOULDNT HAPPEN", false);
         dataPoints[cure.name]=(cure);
         return dataPoints;
     }
@@ -127,7 +127,7 @@ abstract class DayFactory {
         DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","Patients have no issues swallowing water, and passing it.", false);
         dataPoints[thirst.name]=(thirst);
 
-        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "Standard antifungals have no measurable effect on the patients.","ERROR THIS SHOULDNT HAPPEN","ERROR THIS SHOULDNT HAPPEN", false);
+        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "Standard antifungals have no measurable effect on the patients.","Standard antifungals have no measurable effect on the patients.","ERROR THIS SHOULDNT HAPPEN", false);
         dataPoints[cure.name]=(cure);
 
 
@@ -151,7 +151,7 @@ abstract class DayFactory {
         DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","Patients have no issues swallowing water, and passing it.", false);
         dataPoints[thirst.name]=(thirst);
 
-        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "Autoimmune suppresants have no measurable effect on the patients.","ERROR THIS SHOULDNT HAPPEN","ERROR THIS SHOULDNT HAPPEN", false);
+        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "Autoimmune suppresants have no measurable effect on the patients.","Autoimmune suppresants have no measurable effect on the patients.","ERROR THIS SHOULDNT HAPPEN", false);
         dataPoints[cure.name]=(cure);
         return dataPoints;
     }
@@ -174,7 +174,7 @@ abstract class DayFactory {
         DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","Patients have no issues swallowing water, and passing it.", false);
         dataPoints[thirst.name]=(thirst);
 
-        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "Extremely unscientific, last ditch magical spells have no measurable effect on the patients.","ERROR THIS SHOULDNT HAPPEN","ERROR THIS SHOULDNT HAPPEN", false);
+        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "Extremely unscientific, last ditch magical spells have no measurable effect on the patients.","Extremely unscientific, last ditch magical spells have no measurable effect on the patients.","ERROR THIS SHOULDNT HAPPEN", false);
         dataPoints[cure.name]=(cure);
         return dataPoints;
     }
@@ -198,7 +198,7 @@ abstract class DayFactory {
         DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","Patients have no issues swallowing water, and passing it.", false);
         dataPoints[thirst.name]=(thirst);
 
-        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "It...it's a miracle. After exposure to a tree displaying a mutated strain of the infection, the patients have rapidly improved! They might not die! We might have a cure!","ERROR THIS SHOULDNT HAPPEN","ERROR THIS SHOULDNT HAPPEN", true);
+        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "It...it's a miracle. After exposure to a tree displaying a mutated strain of the infection, the patients have rapidly improved! They might not die! We might have a cure!","It...it's a miracle. After exposure to a tree displaying a mutated strain of the infection, the patients have rapidly improved! They might not die! We might have a cure! Finally!","ERROR THIS SHOULDNT HAPPEN", true);
         dataPoints[cure.name]=(cure);
         return dataPoints;
     }
@@ -222,7 +222,7 @@ abstract class DayFactory {
         DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","Patients have no issues swallowing water, and passing it.", false);
         dataPoints[thirst.name]=(thirst);
 
-        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "It...it's a miracle. After exposure to a tree displaying a mutated strain of the infection, the patients have rapidly improved! They might not die! We might have a cure! We can fight fire with fire!","ERROR THIS SHOULDNT HAPPEN","ERROR THIS SHOULDNT HAPPEN", true);
+        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "It...it's a miracle. After exposure to a tree displaying a mutated strain of the infection, the patients have rapidly improved! They might not die! We might have a cure!","It...it's a miracle. After exposure to a tree displaying a mutated strain of the infection, the patients have rapidly improved! They might not die! We might have a cure! Finally!","ERROR THIS SHOULDNT HAPPEN", true);
         dataPoints[cure.name]=(cure);
 
 
@@ -248,7 +248,7 @@ abstract class DayFactory {
         DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","Patients have no issues swallowing water, and passing it.", false);
         dataPoints[thirst.name]=(thirst);
 
-        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "It...it's a miracle. After exposure to a tree displaying a mutated strain of the infection, the patients have rapidly improved! They might not die! We might have a cure!","ERROR THIS SHOULDNT HAPPEN","ERROR THIS SHOULDNT HAPPEN", true);
+        DataPoint cure = new DataPoint(DataPoint.CUREREACTION, "It...it's a miracle. After exposure to a tree displaying a mutated strain of the infection, the patients have rapidly improved! They might not die! We might have a cure!","It...it's a miracle. After exposure to a tree displaying a mutated strain of the infection, the patients have rapidly improved! They might not die! We might have a cure! Finally!","ERROR THIS SHOULDNT HAPPEN", true);
         dataPoints[cure.name]=(cure);
         return dataPoints;
     }
