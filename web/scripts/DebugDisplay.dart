@@ -8,6 +8,18 @@ import 'Response.dart';
 
 abstract class DebugDisplay {
     static void debugDisplay(Game game) {
+        ButtonElement button = new ButtonElement()..text = "Toggle Questions?";
+        game.container.append(button);
+        document.documentElement.removeAttribute("data-seerOf");
+        button.onClick.listen((Event e) {
+            Element html = document.documentElement;
+            const String tag = "data-seerOf";
+            if (html.getAttribute(tag) == "void") {
+                html.removeAttribute(tag);
+            } else {
+                html.setAttribute(tag, "void");
+            }
+        });
         //for each day, print it out in a table
         TableElement table = new TableElement()..classes.add("boringTable");
         TableRowElement header = new TableRowElement()..classes.add("boringTable");
@@ -81,7 +93,8 @@ abstract class DebugDisplay {
     }
 
     static void debugDisplayQuestionDetails(TableElement table, Question question) {
-        TableRowElement row = new TableRowElement();
+
+        TableRowElement row = new TableRowElement()..classes.add("void");
         table.append(row);
         TableCellElement cell1 = new TableCellElement()..text = "${question.text}";
         TableCellElement cell2 = new TableCellElement()..text = "${question.speaker}";

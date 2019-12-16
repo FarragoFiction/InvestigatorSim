@@ -20,6 +20,10 @@ html, body {
     font-weight: bold;
 }
 
+html:not([data-seerOf=void]) .void {
+  display:none;
+}
+
 
 table:not(.boringTable){
     border: 1px solid black;
