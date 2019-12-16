@@ -2,6 +2,7 @@ import 'dart:html';
 
 import 'DataPoint.dart';
 import 'Day.dart';
+import 'DayFactory.dart';
 import 'Game.dart';
 import 'Question.dart';
 import 'Response.dart';
@@ -29,8 +30,11 @@ abstract class DebugDisplay {
 
         header.append(cell1);
         header.append(cell2);
+        List<Day> days = new List<Day>.from(game.days);
+        days.add(DayFactory.altDay7());
+        days.add(DayFactory.altDay8());
 
-        for(Day day in game.days) {
+        for(Day day in days) {
             debugDisplayDay(table, day);
         }
 

@@ -100,6 +100,7 @@ class Game {
     }
 
     void endDay() {
+        pointsToday = 0;
         //the only day a cure can happen
         if(currentDayIndex == 5) {
             checkCure();
@@ -176,7 +177,7 @@ class Game {
 
     void checkCure() {
         Day lastCureAttempt = Day.getPrevDataPoint(DataPoint.CUREREACTION, prevDays);
-        if(lastCureAttempt.datapoints[DataPoint.CUREREACTION].valueAbnormal) {
+        if(lastCureAttempt != null && lastCureAttempt.datapoints[DataPoint.CUREREACTION].valueAbnormal) {
             patientsCured = true;
         }
 

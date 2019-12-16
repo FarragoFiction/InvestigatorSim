@@ -8,54 +8,54 @@ abstract class DayFactory {
 
     //blood pressure normal, temperature normal
     static Day day1() {
-        return new Day("Day 1", day1DataPoints(), day1Questions());
+        return new Day("Infection Day 1", day1DataPoints(), day1Questions());
     }
 
     //blood pressure high, temperature normal
     static Day day2() {
-        return new Day("Day 2", day2DataPoints(), day2Questions());
+        return new Day("Infection Day 2", day2DataPoints(), day2Questions());
 
     }
 
     //blood pressure high, temperature normal
     static Day day3() {
-        return new Day("Day 3", day3DataPoints(), day3Questions());
+        return new Day("Infection Day 3", day3DataPoints(), day3Questions());
 
     }
 
     //blood pressure high, temp normal, MASSIVE metabolism spike
     static Day day4() {
-        return new Day("Day 4", day4DataPoints(), day4Questions());
+        return new Day("Infection Day 4", day4DataPoints(), day4Questions());
 
     }
 
     static Day day5() {
-        return new Day("Day 5", day5DataPoints(), day5Questions());
+        return new Day("Infection Day 5", day5DataPoints(), day5Questions());
 
     }
 
     static Day day6() {
-        return new Day("Day 6", day6DataPoints(), day6Questions());
+        return new Day("Infection Day 6", day6DataPoints(), day6Questions());
 
     }
 
     static Day day7() {
-        return new Day("Day 7", day7DataPoints(), day7Questions());
+        return new Day("Infection Day 7", day7DataPoints(), day7Questions());
 
     }
 
     static Day day8() {
-        return new Day("Day 8", day8DataPoints(), day8Questions());
+        return new Day("Infection Day 8", day8DataPoints(), day8Questions());
 
     }
 
     static Day altDay7() {
-        return new Day("Day 7", day7AltDataPoints(), day7AltQuestions());
+        return new Day("Cure Day 1", day7AltDataPoints(), day7AltQuestions());
 
     }
 
     static Day altDay8() {
-        return new Day("Day 8", day8AltDataPoints(), day8AltQuestions());
+        return new Day("Cure Day 2", day8AltDataPoints(), day8AltQuestions());
 
     }
 
@@ -67,7 +67,7 @@ abstract class DayFactory {
     static String sabotogeEndingFailure = "I regret nothing more than being caught in my subpar sabatoge. Nidhogg will convert you all.";
     static String hungerEnding = "The subjects are all dead. Autopsy reveals profound loss of tissue, both fatty and muscular, as well as abnormalities in the veins. Despite the clear and obvious signs of starvation, no sepisis or signs other co-occurant infections or diseases are present. <br><br>Subjects additionally went only four days of standard Fasting Protocol, a significantly shorter period of time than is required for starvation to set in, much less prove fatal. Just 24 hours ago, they had normal musculature and fat deposits. Just what was happening to their metabolism at the end? Given the reports of infection in other cities world wide, I fear we'll find out before too long...   ";
     static String thirstEnding = "... This is a formal request to downcycle all relevant staff and complete a full and thorough investigation into how such an egregious display of negligence and incompetance could happen.<br> <br>I should not be required to remind staff that living creatures need water to survive, doubly so if they are sick. We are medical proffesionals here, not inebriated zoo keepers. All subjects have died, painfully, of thirst. ";
-    static String cureEnding = "In what I can, in my experienced medical opinion, only call a 'miracle', the patients were cured on day 6 of their infection. We've made sure to spread the knowledge to all cities affected by the outbreak.  Yes, the psychological and physiological changes are off putting, but the patients are ALIVE when they seemed at death's doorstep. We can beat this, and then try to tackle the remaining symptoms with more time on the clock.";
+    static String cureEnding = "The patients continue to experience incredible health. We've made sure to spread the knowledge of the cure to all cities affected by the outbreak.  Yes, the psychological and physiological changes are off putting, but the patients are ALIVE when they seemed at death's doorstep. We can beat this, and then try to tackle the remaining symptoms with more time on the clock.";
 
     static Map<String,DataPoint> day1DataPoints() {
       Map<String,DataPoint> dataPoints = new Map<String,DataPoint>();
