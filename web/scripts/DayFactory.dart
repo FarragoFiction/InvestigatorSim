@@ -34,6 +34,31 @@ abstract class DayFactory {
 
     }
 
+    static Day day6() {
+        return new Day("Day 6", day6DataPoints(), day6Questions());
+
+    }
+
+    static Day day7() {
+        return new Day("Day 7", day7DataPoints(), day7Questions());
+
+    }
+
+    static Day day8() {
+        return new Day("Day 8", day8DataPoints(), day8Questions());
+
+    }
+
+    static Day altDay7() {
+        return new Day("Day 7", day7AltDataPoints(), day7AltQuestions());
+
+    }
+
+    static Day altDay8() {
+        return new Day("Day 8", day8AltDataPoints(), day8AltQuestions());
+
+    }
+
     static String endingDay1 = "No. Never again. We culled them as soon as we could, I can't let what happened to HotPinkGard happen here. Its the only way we can survive.";
     static String endingDay2 = "The disease is progresing too quickly. It was a hard decision, but we can't risk it spreading to the rest of the population, even if it means we lack data. We can only hope that reports that other cities have had a scattering of victims is panic talking, not fact.";
     static String endingDay3 = "We are all sons of bitches. We killed them all, each and every one. But it was too little, too late. It's spread, past any ability to quarantine. And now we don't even have the data on what the disease does past day three. We were fools.";
@@ -120,6 +145,110 @@ abstract class DayFactory {
 
     //extreme hunger ongoing
     static Map<String,DataPoint> day5DataPoints() {
+        Map<String,DataPoint> dataPoints = new Map<String,DataPoint>();
+        DataPoint temp = new DataPoint(DataPoint.TEMPERATURE, "The patients temperature remains well within normal tolerances.","ERROR THIS SHOULDNT HAPPEN","Body temperature remains normal.", false);
+        dataPoints[temp.name]=(temp);
+
+        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?","Blood pressure continues to spike to worrying levels.", true);
+        dataPoints[blood.name]=(blood);
+
+        DataPoint death = new DataPoint(DataPoint.DEATH, "We have decided to cull the patients, to prevent further spread of this mysterious disease.","ERROR","ERROR", true);
+        dataPoints[death.name]=(death);
+
+        DataPoint hunger = new DataPoint(DataPoint.APPETITE, "Patients have appeared ravenous for over 24 hours now. Constant demands for food spurred us to make the decision to break the Fasting Protocol.","Patient metabolism remains in overdrive.","Patients appetite has suddenly spiked, they are consuming a VAST amount of calories and show no signs of stopping.", true);
+        dataPoints[hunger.name]=(hunger);
+
+        DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","Patients have no issues swallowing water, and passing it.", false);
+        dataPoints[thirst.name]=(thirst);
+        return dataPoints;
+    }
+
+
+    //extreme hunger ongoing
+    static Map<String,DataPoint> day6DataPoints() {
+        Map<String,DataPoint> dataPoints = new Map<String,DataPoint>();
+        DataPoint temp = new DataPoint(DataPoint.TEMPERATURE, "The patients temperature remains well within normal tolerances.","ERROR THIS SHOULDNT HAPPEN","Body temperature remains normal.", false);
+        dataPoints[temp.name]=(temp);
+
+        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?","Blood pressure continues to spike to worrying levels.", true);
+        dataPoints[blood.name]=(blood);
+
+        DataPoint death = new DataPoint(DataPoint.DEATH, "We have decided to cull the patients, to prevent further spread of this mysterious disease.","ERROR","ERROR", true);
+        dataPoints[death.name]=(death);
+
+        DataPoint hunger = new DataPoint(DataPoint.APPETITE, "Patients have appeared ravenous for over 24 hours now. Constant demands for food spurred us to make the decision to break the Fasting Protocol.","Patient metabolism remains in overdrive.","Patients appetite has suddenly spiked, they are consuming a VAST amount of calories and show no signs of stopping.", true);
+        dataPoints[hunger.name]=(hunger);
+
+        DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","Patients have no issues swallowing water, and passing it.", false);
+        dataPoints[thirst.name]=(thirst);
+        return dataPoints;
+    }
+
+
+    //extreme hunger ongoing
+    static Map<String,DataPoint> day7DataPoints() {
+        Map<String,DataPoint> dataPoints = new Map<String,DataPoint>();
+        DataPoint temp = new DataPoint(DataPoint.TEMPERATURE, "The patients temperature remains well within normal tolerances.","ERROR THIS SHOULDNT HAPPEN","Body temperature remains normal.", false);
+        dataPoints[temp.name]=(temp);
+
+        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?","Blood pressure continues to spike to worrying levels.", true);
+        dataPoints[blood.name]=(blood);
+
+        DataPoint death = new DataPoint(DataPoint.DEATH, "We have decided to cull the patients, to prevent further spread of this mysterious disease.","ERROR","ERROR", true);
+        dataPoints[death.name]=(death);
+
+        DataPoint hunger = new DataPoint(DataPoint.APPETITE, "Patients have appeared ravenous for over 24 hours now. Constant demands for food spurred us to make the decision to break the Fasting Protocol.","Patient metabolism remains in overdrive.","Patients appetite has suddenly spiked, they are consuming a VAST amount of calories and show no signs of stopping.", true);
+        dataPoints[hunger.name]=(hunger);
+
+        DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","Patients have no issues swallowing water, and passing it.", false);
+        dataPoints[thirst.name]=(thirst);
+        return dataPoints;
+    }
+
+
+    //extreme hunger ongoing
+    static Map<String,DataPoint> day8DataPoints() {
+        Map<String,DataPoint> dataPoints = new Map<String,DataPoint>();
+        DataPoint temp = new DataPoint(DataPoint.TEMPERATURE, "The patients temperature remains well within normal tolerances.","ERROR THIS SHOULDNT HAPPEN","Body temperature remains normal.", false);
+        dataPoints[temp.name]=(temp);
+
+        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?","Blood pressure continues to spike to worrying levels.", true);
+        dataPoints[blood.name]=(blood);
+
+        DataPoint death = new DataPoint(DataPoint.DEATH, "We have decided to cull the patients, to prevent further spread of this mysterious disease.","ERROR","ERROR", true);
+        dataPoints[death.name]=(death);
+
+        DataPoint hunger = new DataPoint(DataPoint.APPETITE, "Patients have appeared ravenous for over 24 hours now. Constant demands for food spurred us to make the decision to break the Fasting Protocol.","Patient metabolism remains in overdrive.","Patients appetite has suddenly spiked, they are consuming a VAST amount of calories and show no signs of stopping.", true);
+        dataPoints[hunger.name]=(hunger);
+
+        DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","Patients have no issues swallowing water, and passing it.", false);
+        dataPoints[thirst.name]=(thirst);
+        return dataPoints;
+    }
+
+    //extreme hunger ongoing
+    static Map<String,DataPoint> day7AltDataPoints() {
+        Map<String,DataPoint> dataPoints = new Map<String,DataPoint>();
+        DataPoint temp = new DataPoint(DataPoint.TEMPERATURE, "The patients temperature remains well within normal tolerances.","ERROR THIS SHOULDNT HAPPEN","Body temperature remains normal.", false);
+        dataPoints[temp.name]=(temp);
+
+        DataPoint blood = new DataPoint(DataPoint.BLOOD_PRESSURE, "Blood pressure is remarkably high. Could this be the break we've been hoping for?","Blood pressure has suddenly spiked to worrying levels. What has changed in the past day or so?","Blood pressure continues to spike to worrying levels.", true);
+        dataPoints[blood.name]=(blood);
+
+        DataPoint death = new DataPoint(DataPoint.DEATH, "We have decided to cull the patients, to prevent further spread of this mysterious disease.","ERROR","ERROR", true);
+        dataPoints[death.name]=(death);
+
+        DataPoint hunger = new DataPoint(DataPoint.APPETITE, "Patients have appeared ravenous for over 24 hours now. Constant demands for food spurred us to make the decision to break the Fasting Protocol.","Patient metabolism remains in overdrive.","Patients appetite has suddenly spiked, they are consuming a VAST amount of calories and show no signs of stopping.", true);
+        dataPoints[hunger.name]=(hunger);
+
+        DataPoint thirst = new DataPoint(DataPoint.THIRST, "Patients renal system is functioning normally.","ERROR THIS SHOULDNT HAPPEN","Patients have no issues swallowing water, and passing it.", false);
+        dataPoints[thirst.name]=(thirst);
+        return dataPoints;
+    }
+
+
+    //extreme hunger ongoing
+    static Map<String,DataPoint> day8AltDataPoints() {
         Map<String,DataPoint> dataPoints = new Map<String,DataPoint>();
         DataPoint temp = new DataPoint(DataPoint.TEMPERATURE, "The patients temperature remains well within normal tolerances.","ERROR THIS SHOULDNT HAPPEN","Body temperature remains normal.", false);
         dataPoints[temp.name]=(temp);
@@ -254,6 +383,131 @@ abstract class DayFactory {
         new Response(question3, "No", "Okay...but...they keep screaming for food...", <String>[],0);
 
         Question question4 = new Question("Should we give the patients water today, Investigator?", Question.INTERN_JIMMY);
+        new Response(question4, "Yes", "I wonder how I carry all that water to them?", <String>[DataPoint.THIRST],1);
+        new Response(question4, "No", "Oh good, I wasn't looking forward to carrying all that water.", <String>[],0);
+
+        questions.add(question1);
+        questions.add(question2);
+        questions.add(question3);
+        questions.add(question4);
+        return questions;
+    }
+
+    static List<Question> day6Questions() {
+        List<Question> questions = new List<Question>();
+        Question question1 = new Question("Is it blood pressure time, Investigator?", Question.INTERN_JIMMY);
+        new Response(question1, "Yes", "I can do this!", <String>[DataPoint.BLOOD_PRESSURE],1);
+        new Response(question1, "No", "Aww...Okay...", <String>[],0);
+
+        Question question2 = new Question("Should we kill the patients, Investigator?", Question.GENOCIDE_JACK);
+        new Response(question2, "Yes", "Finally, some good fucking content", <String>[DataPoint.DEATH],88);
+        new Response(question2, "No", "...I suppose you are the expert.", <String>[],0);
+
+        Question question3 = new Question("can we please feed the patients today, Investigator?", Question.INTERN_JIMMY);
+        new Response(question3, "Yes", "Oh thank god they were starting to riot.", <String>[DataPoint.APPETITE],1);
+        new Response(question3, "No", "Okay...but...they keep screaming for food...", <String>[],0);
+
+        Question question4 = new Question("Should we give the patients water today, Investigator?", Question.INTERN_JIMMY);
+        new Response(question4, "Yes", "I wonder how I carry all that water to them?", <String>[DataPoint.THIRST],1);
+        new Response(question4, "No", "Oh good, I wasn't looking forward to carrying all that water.", <String>[],0);
+
+        questions.add(question1);
+        questions.add(question2);
+        questions.add(question3);
+        questions.add(question4);
+        return questions;
+    }
+
+    static List<Question> day7Questions() {
+        List<Question> questions = new List<Question>();
+        Question question1 = new Question("Is it blood pressure time, Investigator?", Question.INTERN_JIMMY);
+        new Response(question1, "Yes", "I can do this!", <String>[DataPoint.BLOOD_PRESSURE],1);
+        new Response(question1, "No", "Aww...Okay...", <String>[],0);
+
+        Question question2 = new Question("Should we kill the patients, Investigator?", Question.GENOCIDE_JACK);
+        new Response(question2, "Yes", "Finally, some good fucking content", <String>[DataPoint.DEATH],88);
+        new Response(question2, "No", "...I suppose you are the expert.", <String>[],0);
+
+        Question question3 = new Question("can we please feed the patients today, Investigator?", Question.INTERN_JIMMY);
+        new Response(question3, "Yes", "Oh thank god they were starting to riot.", <String>[DataPoint.APPETITE],1);
+        new Response(question3, "No", "Okay...but...they keep screaming for food...", <String>[],0);
+
+        Question question4 = new Question("Should we give the patients water today, Investigator?", Question.INTERN_JIMMY);
+        new Response(question4, "Yes", "I wonder how I carry all that water to them?", <String>[DataPoint.THIRST],1);
+        new Response(question4, "No", "Oh good, I wasn't looking forward to carrying all that water.", <String>[],0);
+
+        questions.add(question1);
+        questions.add(question2);
+        questions.add(question3);
+        questions.add(question4);
+        return questions;
+    }
+
+    static List<Question> day8Questions() {
+        List<Question> questions = new List<Question>();
+        Question question1 = new Question("Is it blood pressure time, Investigator?", Question.INTERN_JIMMY);
+        new Response(question1, "Yes", "I can do this!", <String>[DataPoint.BLOOD_PRESSURE],1);
+        new Response(question1, "No", "Aww...Okay...", <String>[],0);
+
+        Question question2 = new Question("Should we kill the patients, Investigator?", Question.GENOCIDE_JACK);
+        new Response(question2, "Yes", "Finally, some good fucking content", <String>[DataPoint.DEATH],88);
+        new Response(question2, "No", "...I suppose you are the expert.", <String>[],0);
+
+        Question question3 = new Question("can we please feed the patients today, Investigator?", Question.INTERN_JIMMY);
+        new Response(question3, "Yes", "Oh thank god they were starting to riot.", <String>[DataPoint.APPETITE],1);
+        new Response(question3, "No", "Okay...but...they keep screaming for food...", <String>[],0);
+
+        Question question4 = new Question("Should we give the patients water today, Investigator?", Question.INTERN_JIMMY);
+        new Response(question4, "Yes", "I wonder how I carry all that water to them?", <String>[DataPoint.THIRST],1);
+        new Response(question4, "No", "Oh good, I wasn't looking forward to carrying all that water.", <String>[],0);
+
+        questions.add(question1);
+        questions.add(question2);
+        questions.add(question3);
+        questions.add(question4);
+        return questions;
+    }
+
+    static List<Question> day7AltQuestions() {
+        List<Question> questions = new List<Question>();
+        Question question1 = new Question("Alt Placeholder: Is it blood pressure time, Investigator?", Question.INTERN_JIMMY);
+        new Response(question1, "Yes", "I can do this!", <String>[DataPoint.BLOOD_PRESSURE],1);
+        new Response(question1, "No", "Aww...Okay...", <String>[],0);
+
+        Question question2 = new Question("Alt Placeholder: Should we kill the patients, Investigator?", Question.GENOCIDE_JACK);
+        new Response(question2, "Yes", "Finally, some good fucking content", <String>[DataPoint.DEATH],88);
+        new Response(question2, "No", "...I suppose you are the expert.", <String>[],0);
+
+        Question question3 = new Question("Alt Placeholder:  can we please feed the patients today, Investigator?", Question.INTERN_JIMMY);
+        new Response(question3, "Yes", "Oh thank god they were starting to riot.", <String>[DataPoint.APPETITE],1);
+        new Response(question3, "No", "Okay...but...they keep screaming for food...", <String>[],0);
+
+        Question question4 = new Question("Alt Placeholder:  Should we give the patients water today, Investigator?", Question.INTERN_JIMMY);
+        new Response(question4, "Yes", "I wonder how I carry all that water to them?", <String>[DataPoint.THIRST],1);
+        new Response(question4, "No", "Oh good, I wasn't looking forward to carrying all that water.", <String>[],0);
+
+        questions.add(question1);
+        questions.add(question2);
+        questions.add(question3);
+        questions.add(question4);
+        return questions;
+    }
+
+    static List<Question> day8AltQuestions() {
+        List<Question> questions = new List<Question>();
+        Question question1 = new Question("Alt Placeholder: Is it blood pressure time, Investigator?", Question.INTERN_JIMMY);
+        new Response(question1, "Yes", "I can do this!", <String>[DataPoint.BLOOD_PRESSURE],1);
+        new Response(question1, "No", "Aww...Okay...", <String>[],0);
+
+        Question question2 = new Question("Alt Placeholder: Should we kill the patients, Investigator?", Question.GENOCIDE_JACK);
+        new Response(question2, "Yes", "Finally, some good fucking content", <String>[DataPoint.DEATH],88);
+        new Response(question2, "No", "...I suppose you are the expert.", <String>[],0);
+
+        Question question3 = new Question("Alt Placeholder: can we please feed the patients today, Investigator?", Question.INTERN_JIMMY);
+        new Response(question3, "Yes", "Oh thank god they were starting to riot.", <String>[DataPoint.APPETITE],1);
+        new Response(question3, "No", "Okay...but...they keep screaming for food...", <String>[],0);
+
+        Question question4 = new Question("Alt Placeholder: Should we give the patients water today, Investigator?", Question.INTERN_JIMMY);
         new Response(question4, "Yes", "I wonder how I carry all that water to them?", <String>[DataPoint.THIRST],1);
         new Response(question4, "No", "Oh good, I wasn't looking forward to carrying all that water.", <String>[],0);
 

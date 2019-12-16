@@ -14,6 +14,7 @@ class Game {
 
     bool hasEnded = false;
     bool hasMadeAtLeastOneTest = false;
+    bool patientsCured = false;
 
     Day dayPatientsCulled;
     //if its been more than three days without giving them water, they die
@@ -45,7 +46,9 @@ class Game {
         days.add(DayFactory.day3());
         days.add(DayFactory.day4());
         days.add(DayFactory.day5());
-
+        days.add(DayFactory.day6());
+        days.add(DayFactory.day7());
+        days.add(DayFactory.day8());
     }
 
     void debugDisplay() {
@@ -95,6 +98,14 @@ class Game {
     }
 
     void endDay() {
+        //the only day a cure can happen
+        if(currentDayIndex == 5) {
+            if(patientsCured) {
+                //then day 7 and 8 are going to branch out
+                days[6] = DayFactory.altDay7();
+                days[7] = DayFactory.altDay8();
+            }
+        }
         displayReport(currentDay.report(prevDays, this));
     }
 
@@ -131,7 +142,7 @@ class Game {
 
     void displayNext() {
         print("displaying the next thing, cull is $dayPatientsCulled");
-        checkHungerAndThirst();
+        checkChanges();
         if(dayPatientsCulled != null || diedOfHunger || diedOfThirst) {
             end();
             return;
@@ -154,7 +165,7 @@ class Game {
     //if its day four and no data points for hunger have EVER been gathered, die
     //or, if the last day thirst data has been collected was three days ago or more, die
     //science has responsibilities, yo
-    void checkHungerAndThirst() {
+    void checkChanges() {
         checkHunger();
         checkThirst();
     }

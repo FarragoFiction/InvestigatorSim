@@ -34,6 +34,9 @@ class DataPoint {
     //if at any point its been at least three days since they've had water, they die of thirst.
     static String THIRST = "thirst"; //sample it by giving them water
 
+    static String CUREREACTION = "cure"; //you can try different things to cure them, they all fail but one, abnormal value means it didn't work
+
+
     String name;
     String newComment;
     String commentLastAbnormal;
