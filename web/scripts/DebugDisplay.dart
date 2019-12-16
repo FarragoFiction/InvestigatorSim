@@ -4,6 +4,7 @@ import 'DataPoint.dart';
 import 'Day.dart';
 import 'Game.dart';
 import 'Question.dart';
+import 'Response.dart';
 
 abstract class DebugDisplay {
     static void debugDisplay(Game game) {
@@ -86,9 +87,39 @@ abstract class DebugDisplay {
         TableCellElement cell2 = new TableCellElement()..text = "${question.speaker}";
         TableCellElement cell3 = new TableCellElement();
 
+        TableElement detailTable = new TableElement();
+        cell3.append(detailTable);
+        TableRowElement header = new TableRowElement();
+        TableCellElement subcell1 = new TableCellElement()..text = "Your Response";
+        TableCellElement subcell2 = new TableCellElement()..text = "Their Response";
+        TableCellElement subcell3 = new TableCellElement()..text = "Action Point Cost";
+        TableCellElement subcell4 = new TableCellElement()..text = "Variables Set To True";
+        detailTable.append(header);
+        header.append(subcell1);
+        header.append(subcell2);
+        header.append(subcell3);
+        header.append(subcell4);
+        for(Response response in question.responses) {
+            debugDisplayResponseDetails(detailTable, response);
+        }
+
         row.append(cell1);
         row.append(cell2);
         row.append(cell3);
+    }
+
+    static void debugDisplayResponseDetails(TableElement table, Response response) {
+        TableRowElement row = new TableRowElement();
+        table.append(row);
+        TableCellElement cell1 = new TableCellElement()..text = "${response.displayText}";
+        TableCellElement cell2 = new TableCellElement()..text = "${response.responseText}";
+        TableCellElement cell3 = new TableCellElement()..text = "${response.actionPoints}";
+        TableCellElement cell4 = new TableCellElement()..text = "${response.trueVariables.join(',')}";
+
+        row.append(cell1);
+        row.append(cell2);
+        row.append(cell3);
+        row.append(cell4);
     }
 
     static void debugDisplayDataPointDetails(TableElement table, DataPoint point) {
