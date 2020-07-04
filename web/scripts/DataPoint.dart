@@ -27,7 +27,7 @@ class DataPoint {
     static String OBSERVE="observe"; //give them a visual examination
     static String MOTOR="motor"; //test their motor system, have them walk around, touch their toes, etc
     static String COGNITION="cognition"; //ask them simple questions, whats todays date, do you know your name, can you do this simple math/reading test
-    static String IMMUNE_SYSTEM="immune_system"; //test how their immune system is working, do they have secondary infections that might be muddying the results, etc
+    static String BLOOD_TEST="blood_test"; //test how their immune system is working, do they have secondary infections that might be muddying the results, etc
 
     //if its day 4 and they haven't eaten yet, they die here.
     static String APPETITE = "appetite"; //sample it by feeding them
